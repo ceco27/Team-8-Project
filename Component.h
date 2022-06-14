@@ -23,7 +23,7 @@ public:
 	void setPrice(const double);
 
 	virtual void showComponentInfo() const = 0;
-	virtual TypeOfComponent getType() const;
+	virtual Component::TypeOfComponent getType() const;
 
 	virtual Component* clone() const = 0;
 
