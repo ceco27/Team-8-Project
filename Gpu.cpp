@@ -1,8 +1,7 @@
 #include "Gpu.h"
 
-Gpu::Gpu(const char* manufacturer, const char* model, const double price, size_t videoMemory) : Component(manufacturer, model, price)
+Gpu::Gpu(const char* manufacturer, const char* model, const double price, size_t videoMemory) : Component(manufacturer, model, price, GPU)
 {
-	this->componentType = ComponentType::GPU;
 	this->videoMemory = videoMemory;
 }
 

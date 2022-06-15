@@ -1,8 +1,7 @@
 #include "Cpu.h"
 
-Cpu::Cpu(const char* manufacturer, const char* model, const double price, Socket socket, size_t cores) : Component(manufacturer, model, price)
+Cpu::Cpu(const char* manufacturer, const char* model, const double price, Socket socket, size_t cores) : Component(manufacturer, model, price, CPU)
 {
-	this->componentType = ComponentType::CPU;
 	this->socket = socket;
 	this->cores = cores;
 }

@@ -41,32 +41,32 @@ char* getRamTypeText(RamType ramType)
 
 ComponentType getComponentTypeFromString(const char* input)
 {
-	if(strcmp(input, "Motherboard"))
+	if(strcmp(input, "Motherboard") == 0)
 		return MOTHERBOARD;
-	if(strcmp(input, "CPU"))
+	if(strcmp(input, "CPU") == 0)
 		return CPU;
-	if(strcmp(input, "GPU"))
+	if(strcmp(input, "GPU") == 0)
 		return GPU;
-	if(strcmp(input, "RAM"))
+	if(strcmp(input, "RAM") == 0)
 		return RAM;
 }
 
 Socket getSocketFromString(const char* input)
 {
-	if (strcmp(input, "AM4"))
+	if (strcmp(input, "AM4") == 0)
 		return AM4;
-	if (strcmp(input, "AM5"))
+	if (strcmp(input, "AM5") == 0)
 		return AM5;
-	if (strcmp(input, "LGA1151"))
+	if (strcmp(input, "LGA1151") == 0)
 		return LGA1151;
-	if (strcmp(input, "LGA1200"))
+	if (strcmp(input, "LGA1200") == 0)
 		return LGA1200;
 }
 
 RamType getRamTypeFromString(const char* input)
 {
-	if (strcmp(input, "DDR4"))
+	if (strcmp(input, "DDR4") == 0)
 		return DDR4;
-	if (strcmp(input, "DDR5"))
+	if (strcmp(input, "DDR5") == 0)
 		return DDR5;
 }

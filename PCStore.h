@@ -20,6 +20,7 @@ public:
 	void setMoney(double);
 	bool checkBalance(double);
 
+	const double getMoney() const;
 	void subtractFunds(double);
 	void addFunds(double);
 
@@ -33,6 +34,10 @@ public:
 	void sellComponent(size_t);
 
 	void removeFromIndex(size_t);
+
+	void buildComputer();
+	bool checkCompatibilityCpu(Motherboard&, Cpu&);
+	bool checkCompatibilityRam(Motherboard&, Ram&);
 
 	void writeToFile() const;
 

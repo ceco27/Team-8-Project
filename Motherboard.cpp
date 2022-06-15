@@ -1,8 +1,7 @@
 #include "Motherboard.h"
 
-Motherboard::Motherboard(const char* manufacturer, const char* model, const double price, Socket socket, RamType ramType) : Component(manufacturer, model, price)
+Motherboard::Motherboard(const char* manufacturer, const char* model, const double price, Socket socket, RamType ramType) : Component(manufacturer, model, price, MOTHERBOARD)
 {
-	this->componentType = ComponentType::MOTHERBOARD;
 	this->socket = socket;
 	this->ramType = ramType;
 }

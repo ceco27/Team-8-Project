@@ -11,7 +11,7 @@ Component::Component()
 	price = 0.0;
 }
 
-Component::Component(const char* manufacturer, const char* model, const double price)
+Component::Component(const char* manufacturer, const char* model, const double price, ComponentType componentType)
 {
 	this->price = price;
 
@@ -20,6 +20,9 @@ Component::Component(const char* manufacturer, const char* model, const double p
 
 	this->model = new char[strlen(model) + 1];
 	strcpy(this->model, model);
+
+	this->componentType = componentType;
+
 }
 
 Component::Component(const Component& other)
@@ -67,6 +70,8 @@ void Component::copy(const Component& other)
 
 	this->model = new char[strlen(other.model) + 1];
 	strcpy(this->model, other.model);
+	
+	componentType = other.componentType;
 }
 
 void Component::free()

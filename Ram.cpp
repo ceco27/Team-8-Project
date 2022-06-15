@@ -1,8 +1,7 @@
 #include "Ram.h"
 
-Ram::Ram(const char* manufacturer, const char* model, const double price, RamType ramType, size_t memoryCapacity) : Component(manufacturer, model, price)
+Ram::Ram(const char* manufacturer, const char* model, const double price, RamType ramType, size_t memoryCapacity) : Component(manufacturer, model, price, RAM)
 {
-	this->componentType = ComponentType::RAM;
 	this->ramType = ramType;
 	this->memoryCapacity = memoryCapacity;
 }
@@ -19,7 +18,7 @@ size_t Ram::getMemoryCapacity() const
 
 void Ram::showComponentInfo() const
 {
-	std::cout << "Cpu:" << std::endl;
+	std::cout << "Ram:" << std::endl;
 	std::cout << "Manufacturer: " << manufacturer << std::endl;
 	std::cout << "Model: " << model << std::endl;
 	std::cout << "Price: " << price << std::endl;

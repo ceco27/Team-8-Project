@@ -86,6 +86,14 @@ int main()
 			 size_t index = readDoubleAtIndex(line, getIndexOfSpace(line, 1), strlen(line));
 			 pcstore.sellComponent(index - 1);
 		}
+		if (checkStartsWith(line, "build"))
+		{
+			pcstore.buildComputer();
+		}
+		if (checkStartsWith(line, "funds"))
+		{
+			cout << "Money: " << pcstore.getMoney() << std::endl;
+		}
 	}
 
 	pcstore.writeToFile();
