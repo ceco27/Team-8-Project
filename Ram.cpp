@@ -23,9 +23,7 @@ void Ram::showComponentInfo() const
 	std::cout << "Manufacturer: " << manufacturer << std::endl;
 	std::cout << "Model: " << model << std::endl;
 	std::cout << "Price: " << price << std::endl;
-	std::cout << "Ram Type: ";
-	getRamTypeText(ramType);
-	std::cout << std::endl;
+	std::cout << "Ram Type: " << getRamTypeText(ramType) << std::endl;
 	std::cout << "Memory Capacity: " << memoryCapacity << std::endl;
 }
 
@@ -34,8 +32,9 @@ ComponentType Ram::getComponentType() const
 	return componentType;
 }
 
-void Ram::saveToFile(std::ofstream&) const
+void Ram::saveToFile(std::ofstream& file) const
 {
+	file << "RAM " << manufacturer << " " << model << " " << price << " " << getRamTypeText(ramType) << " " << memoryCapacity << std::endl;
 }
 
 Component* Ram::clone() const

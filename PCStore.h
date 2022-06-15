@@ -17,12 +17,22 @@ public:
 	PCStore& operator=(const PCStore&);
 	~PCStore();
 
+	void setMoney(double);
+	bool checkBalance(double);
+
+	void subtractFunds(double);
+	void addFunds(double);
+
 	void printComponentInfos() const;
 
 	void addMotherboard(Motherboard);
 	void addCpu(Cpu);
 	void addGpu(Gpu);
 	void addRam(Ram);
+
+	void sellComponent(size_t);
+
+	void removeFromIndex(size_t);
 
 	void writeToFile() const;
 

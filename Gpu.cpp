@@ -25,8 +25,9 @@ ComponentType Gpu::getComponentType() const
 	return componentType;
 }
 
-void Gpu::saveToFile(std::ofstream&) const
+void Gpu::saveToFile(std::ofstream& file) const
 {
+	file << "GPU " << manufacturer << " " << model << " " << price << " " << videoMemory << std::endl;
 }
 
 Component* Gpu::clone() const

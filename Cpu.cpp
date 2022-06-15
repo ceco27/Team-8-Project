@@ -23,9 +23,7 @@ void Cpu::showComponentInfo() const
 	std::cout << "Manufacturer: " << manufacturer << std::endl;
 	std::cout << "Model: " << model << std::endl;
 	std::cout << "Price: " << price << std::endl;
-	std::cout << "Socket: ";
-	getSocketTypeText(socket);
-	std::cout << std::endl;
+	std::cout << "Socket: " << getSocketTypeText(socket) << std::endl;
 	std::cout << "Cores: " << cores << std::endl;
 }
 
@@ -34,8 +32,9 @@ ComponentType Cpu::getComponentType() const
 	return componentType;
 }
 
-void Cpu::saveToFile(std::ofstream&) const
+void Cpu::saveToFile(std::ofstream& file) const
 {
+	file << "CPU " << manufacturer << " " << model << " " << price << " " << getSocketTypeText(socket) << " " << cores << std::endl;
 }
 
 Component* Cpu::clone() const

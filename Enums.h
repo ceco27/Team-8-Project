@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable : 4996)
 enum ComponentType
 {
 	MOTHERBOARD,
@@ -21,9 +22,9 @@ enum RamType
 	DDR5
 };
 
-void getComponentTypeText(ComponentType componentType);
-void getSocketTypeText(Socket socket);
-void getRamTypeText(RamType ramType);
+char* getComponentTypeText(ComponentType componentType);
+char* getSocketTypeText(Socket socket);
+char* getRamTypeText(RamType ramType);
 
 ComponentType getComponentTypeFromString(const char*);
 Socket getSocketFromString(const char*);

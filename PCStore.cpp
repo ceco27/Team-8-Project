@@ -29,6 +29,26 @@ PCStore::~PCStore()
 	free();
 }
 
+void PCStore::setMoney(double money)
+{
+	this->money = money;
+}
+
+bool PCStore::checkBalance(double price)
+{
+	return money > price;
+}
+
+void PCStore::subtractFunds(double price)
+{
+	money -= price;
+}
+
+void PCStore::addFunds(double price)
+{
+	money += price * 1.1;
+}
+
 void PCStore::printComponentInfos() const
 {
 	for (size_t i = 0; i < countComponents; i++)
@@ -70,9 +90,45 @@ void PCStore::addRam(Ram ram)
 	components[countComponents++] = new Ram(ram);
 }
 
+void PCStore::sellComponent(size_t index)
+{
+	money += components[index]->getPrice();
+	removeFromIndex(index);
+	std::cout << "Component sold!" << std::endl;
+}
+
+void PCStore::removeFromIndex(size_t index)
+{
+	if (index >= countComponents)
+	{
+		std::cout << "No such index!" << std::endl;
+		return;
+	}
+
+	delete[] components[index];
+
+	for (size_t j = index; j < countComponents - 1; j++)
+		components[j] = components[j + 1]->clone();
+
+	if (index != countComponents - 1)
+		delete[] components[countComponents - 1];
+	countComponents--;
+}
+
 void PCStore::writeToFile() const
 {
-	//TODO
+	std::ofstream file;
+
+	file.open("components.txt");
+
+	file << "money " << money << std::endl;
+
+	for (size_t i = 0; i < countComponents; i++)
+		components[i]->saveToFile(file);
+
+	file << "End" << std::endl;
+
+	file.close();
 }
 
 void PCStore::copy(const PCStore& other)
@@ -82,8 +138,11 @@ void PCStore::copy(const PCStore& other)
 	countComponents = other.countComponents;
 	capacityComponents = other.capacityComponents;
 
+	money = other.money;
+
 	for (size_t i = 0; i < countComponents; i++)
 		components[i] = other.components[i]->clone();
+
 }
 
 void PCStore::free()

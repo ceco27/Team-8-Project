@@ -147,6 +147,7 @@
     <ClCompile Include="Motherboard.cpp" />
     <ClCompile Include="PCStore.cpp" />
     <ClCompile Include="Ram.cpp" />
+    <ClCompile Include="StreamManipulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Component.h" />
@@ -156,6 +157,7 @@
     <ClInclude Include="Motherboard.h" />
     <ClInclude Include="PCStore.h" />
     <ClInclude Include="Ram.h" />
+    <ClInclude Include="StreamManipulation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

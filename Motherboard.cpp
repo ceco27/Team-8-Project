@@ -23,12 +23,8 @@ void Motherboard::showComponentInfo() const
 	std::cout << "Manufacturer: " << manufacturer << std::endl;
 	std::cout << "Model: " << model << std::endl;
 	std::cout << "Price: " << price << std::endl;
-	std::cout << "Socket: ";
-	getSocketTypeText(socket);
-	std::cout << std::endl;
-	std::cout << "Ram Type: ";
-	getRamTypeText(ramType);
-	std::cout << std::endl;
+	std::cout << "Socket: " << getSocketTypeText(socket) << std::endl;
+	std::cout << "Ram Type: " << getRamTypeText(ramType) << std::endl;
 }
 
 ComponentType Motherboard::getComponentType() const
@@ -38,6 +34,7 @@ ComponentType Motherboard::getComponentType() const
 
 void Motherboard::saveToFile(std::ofstream& file) const
 {
+	file << "Motherboard " << manufacturer << " " << model << " " << price << " " << getSocketTypeText(socket) << " " << getRamTypeText(ramType) << std::endl;
 }
 
 Component* Motherboard::clone() const
