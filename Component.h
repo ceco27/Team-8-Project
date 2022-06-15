@@ -1,13 +1,11 @@
 #pragma once
-
+#include "Enums.h"
+#include<fstream>
+#include<iostream>
+#pragma warning(disable : 4996)
 class Component {
 protected:
-	enum TypeOfComponent
-	{
-		MOTHERBOARD,
-		CPU,
-		GPU
-	} type;
+	ComponentType componentType;
 	char* manufacturer;
 	char* model;
 	double price;
@@ -23,7 +21,8 @@ public:
 	void setPrice(const double);
 
 	virtual void showComponentInfo() const = 0;
-	virtual Component::TypeOfComponent getType() const;
+	virtual ComponentType getComponentType() const;
+	virtual void saveToFile(std::ofstream&) const = 0;
 
 	virtual Component* clone() const = 0;
 

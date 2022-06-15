@@ -53,9 +53,9 @@ void Component::setPrice(const double price)
 	this->price = price;
 }
 
-Component::TypeOfComponent Component::getType() const
+ComponentType Component::getComponentType() const
 {
-	return type;
+	return componentType;
 }
 
 void Component::copy(const Component& other)
