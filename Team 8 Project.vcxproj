@@ -145,6 +145,7 @@
     <ClCompile Include="Gpu.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Motherboard.cpp" />
+    <ClCompile Include="PCStore.cpp" />
     <ClCompile Include="Ram.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +154,7 @@
     <ClInclude Include="Enums.h" />
     <ClInclude Include="Gpu.h" />
     <ClInclude Include="Motherboard.h" />
+    <ClInclude Include="PCStore.h" />
     <ClInclude Include="Ram.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

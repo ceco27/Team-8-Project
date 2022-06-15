@@ -1,7 +1,7 @@
 #pragma once
 enum ComponentType
 {
-	Motherboard,
+	MOTHERBOARD,
 	CPU,
 	GPU,
 	RAM
@@ -24,3 +24,7 @@ enum RamType
 void getComponentTypeText(ComponentType componentType);
 void getSocketTypeText(Socket socket);
 void getRamTypeText(RamType ramType);
+
+ComponentType getComponentTypeFromString(const char*);
+Socket getSocketFromString(const char*);
+RamType getRamTypeFromString(const char*);

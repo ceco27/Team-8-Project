@@ -2,7 +2,7 @@
 
 Motherboard::Motherboard(const char* manufacturer, const char* model, const double price, Socket socket, RamType ramType) : Component(manufacturer, model, price)
 {
-	this->componentType = ComponentType::Motherboard;
+	this->componentType = ComponentType::MOTHERBOARD;
 	this->socket = socket;
 	this->ramType = ramType;
 }
